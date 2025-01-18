@@ -1,10 +1,10 @@
-green_circuit	  44.1
 iron	  16.0
 stone	  12.6
 gear	  10.8
 steel	   8.4
-red_circuit	   7.4
+green_circuit	   7.4
 copper	   3.9
+red_circuit	   3.8
 coal	   2.5
 low_dens	   2.0
 blue_circuit	   1.8
@@ -12,6 +12,7 @@ battery	   1.3
 engine	   1.1
 fly_robo	   0.6
 motor	   0.6
+sulf_acid	   0.5
 belt	   0.5
 cable	   0.4
 pierce_mag	   0.2
@@ -22,4 +23,6 @@ concrete	   0.2
 elec_furnance	   0.2
 prod_mod	   0.2
 combinator	   0.1
+water	   0.0
+iron_ore	   0.0
 steel_chest	   0.0

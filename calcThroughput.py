@@ -1,22 +1,27 @@
 '''
 before main bus
-    stone
-    iron
+    smelting
+
     steel
-    plastic
     gear
+
+    oil processing
+    sulfur
+    sulf_acid
+
+    plastic
     green_circuit
     red_circuit
+    blue_circuit
     low_dens    
 
 main bus
-    green_circuit
     iron
     stone
     gear
-
     steel
-    red_circuit
+
+    green_circuit
     copper
 '''
 

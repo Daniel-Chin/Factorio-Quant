@@ -61,33 +61,35 @@ class Resource:
             self.ingredients[raw] += qty * inter_qty
         return self
 
+iron_ore = Resource('iron_ore', {}).beforeMainBus()
+
 stone = Resource('stone', {}).beforeMainBus()
 iron = Resource('iron', {}).beforeMainBus()
-copper = Resource('copper', {})
-coal = Resource('coal', {})
+copper = Resource('copper', {}).beforeMainBus()
+coal = Resource('coal', {}).beforeMainBus()
+water = Resource('water', {}).beforeMainBus()
+petro = Resource('petro', {}).beforeMainBus()
+sulfur = Resource('sulfur', {water: 15.0 / 50, petro: 15.0 / 50}).beforeMainBus()
+sulf_acid = Resource('sulf_acid', {iron: 1.0, sulfur: 5.0, water: 100.0 / 50}).beforeMainBus()
+
 steel = Resource('steel', {iron: 5.0}).beforeMainBus()
-plastic = Resource('plastic', {coal: 0.5}).beforeMainBus()
-sulfur = Resource('sulfur', {})
-battery = Resource('battery', {iron: 1.0, copper: 1.0})
-explosives = Resource('explosives', {sulfur: 0.5, coal: 0.5})
+plastic = Resource('plastic', {coal: 0.5, petro: 10.0 / 50}).beforeMainBus()
 gear = Resource(
     'gear', {iron: 2.0}, 
 ).beforeMainBus()
-stick = Resource('stick', {iron: 0.5})
 cable = Resource('cable', {copper: 0.5})
 green_circuit = Resource('green_circuit', {iron: 1.0, cable: 3.0}).beforeMainBus()
-red_circuit = Resource('red_circuit', {
-    green_circuit: 2.0, plastic: 2.0, 
-    # integrated
-    # cable: 4.0, 
-    copper: 2.0, 
-}).beforeMainBus()
-blue_circuit = Resource('blue_circuit', {red_circuit: 2.0, green_circuit: 20.0})
+red_circuit = Resource('red_circuit', {green_circuit: 2.0, plastic: 2.0, cable: 4.0}).beforeMainBus()
+blue_circuit = Resource('blue_circuit', {red_circuit: 2.0, green_circuit: 20.0, sulf_acid: 5.0 / 50}).beforeMainBus()
+low_dens = Resource('low_dens', {copper: 20.0, steel: 2.0, plastic: 5.0}).beforeMainBus()
+
+battery = Resource('battery', {iron: 1.0, copper: 1.0, sulf_acid: 20.0 / 50})
+explosives = Resource('explosives', {sulfur: 0.5, coal: 0.5, water: 5.0 / 50})
+stick = Resource('stick', {iron: 0.5})
 pipe = Resource('pipe', {iron: 1.0})
 engine = Resource('engine', {gear: 1.0, pipe: 2.0, steel: 1.0}).localDirectSupply(pipe)
 motor = Resource('motor', {engine: 1.0, green_circuit: 2.0})
 fly_robo = Resource('fly_robo', {steel: 1.0, battery: 2.0, green_circuit: 3.0, motor: 1.0})
-low_dens = Resource('low_dens', {copper: 20.0, steel: 2.0, plastic: 5.0}).beforeMainBus()
 rocket_part = Resource('rocket_part', {low_dens: 10.0, blue_circuit: 10.0})
 
 iron_chest = Resource('iron_chest', {iron: 8.0})
@@ -116,7 +118,7 @@ roboport = Resource('roboport', {steel: 45.0, green_circuit: 45.0, red_circuit: 
 combinator = Resource('combinator', {green_circuit: 5.0, cable: 5.0})
 selector = Resource('selector', {combinator: 5.0, red_circuit: 2.0})
 stone_brick = Resource('stone_brick', {stone: 2.0})
-concrete = Resource('concrete', {stone_brick: 0.5}).localIntermediate(stone_brick)
+concrete = Resource('concrete', {stone_brick: 0.5, iron_ore: 0.1, water: 10.0 / 50}).localIntermediate(stone_brick)
 
 reactor = Resource('reactor', {concrete: 500.0, steel: 500.0, red_circuit: 500.0, copper: 500.0})
 heat_pipe = Resource('heat_pipe', {steel: 10.0, copper: 20.0})

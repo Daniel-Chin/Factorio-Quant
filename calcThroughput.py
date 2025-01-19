@@ -2,27 +2,20 @@
 before main bus
     smelting
 
-    steel
-    gear
-
     oil processing
     sulfur
     sulf_acid
 
     plastic
-    green_circuit
     red_circuit
     blue_circuit
     low_dens    
 
 main bus
     iron
-    stone
-    gear
-    steel
-
-    green_circuit
     copper
+    steel
+    stone
 '''
 
 # from pprint import pprint

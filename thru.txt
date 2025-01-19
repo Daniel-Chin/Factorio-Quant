@@ -2,7 +2,7 @@ iron	  45.1
 copper	  15.0
 stone	  12.6
 steel	   8.4
-green_circuit	   7.4
+green_circuit	   6.7
 red_circuit	   3.8
 coal	   2.5
 low_dens	   2.0

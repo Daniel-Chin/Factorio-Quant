@@ -1,15 +1,28 @@
 '''
-before main bus
+pre bus productions
     smelting
 
     oil processing
     sulfur
     sulf_acid
+    battery
+    explosive
 
     plastic
-    red_circuit
-    blue_circuit
-    low_dens    
+    (green_circuit) (22 assems)
+    red_circuit     (needs 7.6 green circuits) (22 assems)
+    blue_circuit    (needs 36 green circuits, 3.6 red circuits) (18 assems)
+    low_dens        (needs 40 copper) (30 assems)
+
+pre bus
+    copper  (74.6)
+    copper
+    steel   ( 4.0)  (shared with main bus, so 12.4; ore = 62)
+    iron    (45.0) - green_circuit  (43.6)
+
+    plastic (24.9)
+    coal
+    sulfur - sulf_acid
 
 main bus
     iron
@@ -44,8 +57,8 @@ def main():
         pipe_to_ground: 0.1, 
         rail: 0.3, 
         signal: 0.1, 
-        logi_robot: 0.2, 
-        cons_robot: 0.2,
+        logi_robot: 0.1, 
+        cons_robot: 0.1,
         storage_chest: 0.01,
         roboport: 0.01,
         combinator: 0.03,

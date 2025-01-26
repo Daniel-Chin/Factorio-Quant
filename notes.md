@@ -1,10 +1,5 @@
 ## todo
-- military supply train
-  - ammo
-  - repair pack
-  - cons robo
-  - wall
-  - MG turret
+- nuclear fuel
 
 ## quality
 - MG turret

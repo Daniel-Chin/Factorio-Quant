@@ -20,6 +20,7 @@ pre bus
     steel   ( 4.0)  (shared with main bus, so 12.4; ore = 62)
     iron    (45.0) - green_circuit  (43.6)
 
+    (petro) ( 5.8 barrels) (70 petro per refinery)
     plastic (24.9)
     coal
     sulfur - sulf_acid

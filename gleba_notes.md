@@ -1,0 +1,33 @@
+- fuel 17 biochambers = 1.7/s nutrient
+- 15/s nutrient = 1-biochamber(1.25/s bioflux)
+- power 2MW = 0.02/s rocket_fuel
+
+- 1/s agri sci = 2-biochamber(0.667/s bioflux, 0.667/s egg)
+- 0.667/s egg = 4-biochamber(13.333/s nutrient)
+- 0.001/s rocket
+  - 0.05/s rocket_part
+- 0.05/s low_dense = 1-assem_2(1/s copp, 0.5/s iron, 0.25/s plastic)
+- 0.07/s rocket_fuel = 1-biochamber(0.0934/s bioflux, 1.2/s jelly)
+- 0.05/s blue_circuit = 1-em_plant(0.25/s sulf_acid, 0.1/s red_circuit, 1/s green_circuit)
+- 0.25/s sulf_acid = 1-cplant(0.005 iron, 0.025/s sulf)
+- 0.1/s red_circuit = 1-assem_2(0.2/s plastic, 0.2/s green_circuit, 0.4/s wire)
+- 1.2/s green_circuit = 1-assem_2(1.2/s iron, 3.6/s wire)
+- 4/s wire = 1-assem_2(1.28/s copp)
+- 2.5/s iron = 4-smelter(1-biochamber(0.5/s bioflux))
+- 2.5/s copp = 4-smelter(1-biochamber(0.5/s bioflux))
+- 0.025/s sulf = 1-biochamber(0.008333/s bioflux, 0.041667/s spoilage)
+- 0.45/s plastic = 1-biochamber(0.1/s bioflux, 0.4/s y_mash)
+- 3.12/s bioflux = 2-biochamber(7.8/s y_mash, 6.24/s jelly)
+- 8.2/s y_mash = 2-biochamber(2.72/s yumako)
+- 7.44/s jelly = 1-biochamber(1.24/s brain)
+- 2.72/s yumako = 17 trees
+- 1.24/s brain = 8 trees
+
+- lube = jelly
+
+- logistics
+  - spoilage
+  - y_mash and jelly
+    - src: monitor logistic request
+    - drain: flush unrequested
+    - flushed/flight_canceled: to composter

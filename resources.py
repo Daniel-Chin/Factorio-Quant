@@ -47,18 +47,18 @@ class Resource:
         return c
     
     def beforeMainBus(self):
-        self.ingredients.clear()
+        # self.ingredients.clear()
         return self
     
     def localDirectSupply(self, res: Resource):
         return self.localIntermediate(res)
     
     def localIntermediate(self, intermediate: Resource):
-        inter_qty = self.ingredients.pop(intermediate)
-        for raw, qty in intermediate.ingredients.items():
-            if raw not in self.ingredients:
-                self.ingredients[raw] = 0.0
-            self.ingredients[raw] += qty * inter_qty
+        # inter_qty = self.ingredients.pop(intermediate)
+        # for raw, qty in intermediate.ingredients.items():
+        #     if raw not in self.ingredients:
+        #         self.ingredients[raw] = 0.0
+        #     self.ingredients[raw] += qty * inter_qty
         return self
 
 iron_ore = Resource('iron_ore', {}).beforeMainBus()
@@ -68,6 +68,8 @@ iron = Resource('iron', {}).beforeMainBus()
 copper = Resource('copper', {}).beforeMainBus()
 coal = Resource('coal', {}).beforeMainBus()
 water = Resource('water', {}).beforeMainBus()
+crude_oil = Resource('crude_oil', {})
+light_oil = Resource('light_oil', {}).beforeMainBus()
 petro = Resource('petro', {}).beforeMainBus()
 sulfur = Resource('sulfur', {water: 15.0 / 50, petro: 15.0 / 50}).beforeMainBus()
 sulf_acid = Resource('sulf_acid', {iron: 1.0, sulfur: 5.0, water: 100.0 / 50}).beforeMainBus()
@@ -141,9 +143,47 @@ flamer_turret = Resource('flamer_turret', {steel: 30.0, pipe: 10.0, gear: 15.0, 
 
 prod_mod = Resource('prod_mod', {red_circuit: 5.0, green_circuit: 5.0})
 
+carbon = Resource('carbon', {})
+
+holmium_ore = Resource('holmium_ore', {})
+holmium_solution = Resource('holmium_solution', {stone: 1.0 / 2, holmium_ore: 2.0 / 2, water: 10.0 / 100})
+holmium_plate = Resource('holmium_plate', {holmium_solution: 20.0 / 50})
+superconductor = Resource('superconductor', {
+    copper: 1.0 / 2, 
+    plastic: 1.0 / 2,
+    holmium_plate: 1.0 / 2,
+    light_oil: 5.0 / 50,
+})
+
+prom_chunk = Resource('prom_chunk', {})
+bioflux = Resource('bioflux', {})   # not modeled here
+fibre = Resource('fibre', {})    # not modeled here
+biter_eggs = Resource('biter_eggs', {bioflux: 1.0 / 30})
+
+tungsten_ore = Resource('tungsten_ore', {})
+tungsten_carbide = Resource('tungsten_carbide', {carbon: 1.0, tungsten_ore: 2.0, sulf_acid: 10.0 / 50})
+
+ammonia = Resource('ammonia', {})
+brine = Resource('brine', {})
+fluorine = Resource('fluorine', {})
+lithium = Resource('lithium', {holmium_plate: 1.0 / 5, brine: 50.0 / 50 / 5, ammonia: 50.0 / 50 / 5})
+lithium_plate = Resource('lithium_plate', {lithium: 1.0})
+solid_fuel_aquilo = Resource('solid_fuel_aquilo', {ammonia: 15.0 / 50, crude_oil: 6.0 / 50})
+fluoroketone = Resource('fluoroketone', {solid_fuel_aquilo: 1.0, lithium: 1.0, fluorine: 50.0 / 50, ammonia: 50.0 / 50})
+quantum_cpu = Resource('quantum_cpu', {
+    blue_circuit: 1.0, 
+    tungsten_carbide: 1.0, 
+    superconductor: 1.0, 
+    fibre: 1.0,
+    lithium_plate: 2.0,
+    fluoroketone: 10.0 / 50,
+})
+
 red_sci = Resource('red_sci', {copper: 1.0, gear: 1.0}).localIntermediate(gear)
 green_sci = Resource('green_sci', {belt: 1.0, inserter: 1.0}).localDirectSupply(inserter)
 gray_sci = Resource('gray_sci', {pierce_mag: 0.5, wall: 1.0, grenade: 0.5}).localDirectSupply(wall)
 blue_sci = Resource('blue_sci', {sulfur: 0.5, red_circuit: 1.5, engine: 1.0})
 purple_sci = Resource('purple_sci', {rail: 10.0, elec_furnance: 1/3.0, prod_mod: 1/3.0}).localDirectSupply(rail)
 golden_sci = Resource('golden_sci', {blue_circuit: 2/3.0, fly_robo: 1/3.0, low_dens: 1.0})
+cryo_sci = Resource('cryo_sci', {lithium_plate: 1.0, fluoroketone: 3.0 / 50})
+prom_sci = Resource('prom_sci', {biter_eggs: 10.0 / 10, quantum_cpu: 1.0 / 10, prom_chunk: 25.0 / 10})

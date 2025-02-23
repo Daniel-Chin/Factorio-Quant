@@ -8,6 +8,7 @@ class Resource:
     name: str
     ingredients: tp.Dict[Resource, float]
     direct_supply_target: tp.List[Resource] = field(default_factory=list)
+    rocket_capacity: int | None = None
 
     def __repr__(self):
         return self.name
@@ -67,12 +68,13 @@ stone = Resource('stone', {}).beforeMainBus()
 iron = Resource('iron', {}).beforeMainBus()
 copper = Resource('copper', {}).beforeMainBus()
 coal = Resource('coal', {}).beforeMainBus()
-water = Resource('water', {}).beforeMainBus()
-crude_oil = Resource('crude_oil', {})
-light_oil = Resource('light_oil', {}).beforeMainBus()
-petro = Resource('petro', {}).beforeMainBus()
+water = Resource('water', {}, rocket_capacity = 100).beforeMainBus()
+crude_oil = Resource('crude_oil', {}, rocket_capacity = 100)
+light_oil = Resource('light_oil', {}, rocket_capacity = 100).beforeMainBus()
+lube = Resource('lube', {crude_oil: 50.0 / 50}, rocket_capacity = 100).beforeMainBus()
+petro = Resource('petro', {}, rocket_capacity = 100).beforeMainBus()
 sulfur = Resource('sulfur', {water: 15.0 / 50, petro: 15.0 / 50}).beforeMainBus()
-sulf_acid = Resource('sulf_acid', {iron: 1.0, sulfur: 5.0, water: 100.0 / 50}).beforeMainBus()
+sulf_acid = Resource('sulf_acid', {iron: 1.0, sulfur: 5.0, water: 100.0 / 50}, rocket_capacity = 100).beforeMainBus()
 
 steel = Resource('steel', {iron: 5.0}).beforeMainBus()
 plastic = Resource('plastic', {coal: 0.5, petro: 10.0 / 50}).beforeMainBus()
@@ -80,17 +82,23 @@ gear = Resource('gear', {iron: 2.0})
 cable = Resource('cable', {copper: 0.5})
 green_circuit = Resource('green_circuit', {iron: 1.0, cable: 3.0}).localIntermediate(cable)
 red_circuit = Resource('red_circuit', {green_circuit: 2.0, plastic: 2.0, cable: 4.0}).beforeMainBus()
-blue_circuit = Resource('blue_circuit', {red_circuit: 2.0, green_circuit: 20.0, sulf_acid: 5.0 / 50}).localDirectSupply(red_circuit).beforeMainBus()
-low_dens = Resource('low_dens', {copper: 20.0, steel: 2.0, plastic: 5.0}).beforeMainBus()
+blue_circuit = Resource('blue_circuit', {
+    red_circuit: 2.0, green_circuit: 20.0, sulf_acid: 5.0 / 50, 
+}, rocket_capacity = 300).localDirectSupply(red_circuit).beforeMainBus()
+low_dens = Resource('low_dens', {copper: 20.0, steel: 2.0, plastic: 5.0}, rocket_capacity = 200).beforeMainBus()
 
 battery = Resource('battery', {iron: 1.0, copper: 1.0, sulf_acid: 20.0 / 50})
 explosives = Resource('explosives', {sulfur: 0.5, coal: 0.5, water: 5.0 / 50})
 stick = Resource('stick', {iron: 0.5})
 pipe = Resource('pipe', {iron: 1.0})
 engine = Resource('engine', {gear: 1.0, pipe: 2.0, steel: 1.0}).localDirectSupply(pipe).localIntermediate(gear)
-motor = Resource('motor', {engine: 1.0, green_circuit: 2.0})
+motor = Resource('motor', {engine: 1.0, green_circuit: 2.0, lube: 15.0 / 50})
 fly_robo = Resource('fly_robo', {steel: 1.0, battery: 2.0, green_circuit: 3.0, motor: 1.0})
-rocket_part = Resource('rocket_part', {low_dens: 10.0, blue_circuit: 10.0})
+solid_fuel = Resource('solid_fuel', {light_oil: 10.0 / 50})
+rocket_fuel = Resource('rocket_fuel', {
+    light_oil: 10.0 / 50, solid_fuel: 10.0, 
+}, rocket_capacity = 100)
+rocket_part = Resource('rocket_part', {low_dens: 1.0, blue_circuit: 1.0, rocket_fuel: 1.0})
 
 iron_chest = Resource('iron_chest', {iron: 8.0})
 belt = Resource('belt', {iron: 1.0, gear: 1.0}).localIntermediate(gear)
@@ -147,29 +155,33 @@ carbon = Resource('carbon', {})
 
 holmium_ore = Resource('holmium_ore', {})
 holmium_solution = Resource('holmium_solution', {stone: 1.0 / 2, holmium_ore: 2.0 / 2, water: 10.0 / 100})
-holmium_plate = Resource('holmium_plate', {holmium_solution: 20.0 / 50})
+holmium_plate = Resource('holmium_plate', {holmium_solution: 20.0 / 50}, rocket_capacity = 1000)
 superconductor = Resource('superconductor', {
     copper: 1.0 / 2, 
     plastic: 1.0 / 2,
     holmium_plate: 1.0 / 2,
     light_oil: 5.0 / 50,
-})
+}, rocket_capacity = 1000)
 
 prom_chunk = Resource('prom_chunk', {})
 bioflux = Resource('bioflux', {})   # not modeled here
-fibre = Resource('fibre', {})    # not modeled here
+fibre = Resource('fibre', {}, rocket_capacity = 500)    # not modeled here
 biter_eggs = Resource('biter_eggs', {bioflux: 1.0 / 30})
 
 tungsten_ore = Resource('tungsten_ore', {})
-tungsten_carbide = Resource('tungsten_carbide', {carbon: 1.0, tungsten_ore: 2.0, sulf_acid: 10.0 / 50})
+tungsten_carbide = Resource('tungsten_carbide', {
+    carbon: 1.0, tungsten_ore: 2.0, sulf_acid: 10.0 / 50, 
+}, rocket_capacity = 500)
 
 ammonia = Resource('ammonia', {})
 brine = Resource('brine', {})
 fluorine = Resource('fluorine', {})
 lithium = Resource('lithium', {holmium_plate: 1.0 / 5, brine: 50.0 / 50 / 5, ammonia: 50.0 / 50 / 5})
-lithium_plate = Resource('lithium_plate', {lithium: 1.0})
+lithium_plate = Resource('lithium_plate', {lithium: 1.0}, rocket_capacity = 500)
 solid_fuel_aquilo = Resource('solid_fuel_aquilo', {ammonia: 15.0 / 50, crude_oil: 6.0 / 50})
-fluoroketone = Resource('fluoroketone', {solid_fuel_aquilo: 1.0, lithium: 1.0, fluorine: 50.0 / 50, ammonia: 50.0 / 50})
+fluoroketone = Resource('fluoroketone', {
+    solid_fuel_aquilo: 1.0, lithium: 1.0, fluorine: 50.0 / 50, ammonia: 50.0 / 50, 
+}, rocket_capacity = 100)
 quantum_cpu = Resource('quantum_cpu', {
     blue_circuit: 1.0, 
     tungsten_carbide: 1.0, 
@@ -179,11 +191,41 @@ quantum_cpu = Resource('quantum_cpu', {
     fluoroketone: 10.0 / 50,
 })
 
-red_sci = Resource('red_sci', {copper: 1.0, gear: 1.0}).localIntermediate(gear)
-green_sci = Resource('green_sci', {belt: 1.0, inserter: 1.0}).localDirectSupply(inserter)
-gray_sci = Resource('gray_sci', {pierce_mag: 0.5, wall: 1.0, grenade: 0.5}).localDirectSupply(wall)
-blue_sci = Resource('blue_sci', {sulfur: 0.5, red_circuit: 1.5, engine: 1.0})
-purple_sci = Resource('purple_sci', {rail: 10.0, elec_furnance: 1/3.0, prod_mod: 1/3.0}).localDirectSupply(rail)
-golden_sci = Resource('golden_sci', {blue_circuit: 2/3.0, fly_robo: 1/3.0, low_dens: 1.0})
-cryo_sci = Resource('cryo_sci', {lithium_plate: 1.0, fluoroketone: 3.0 / 50})
-prom_sci = Resource('prom_sci', {biter_eggs: 10.0 / 10, quantum_cpu: 1.0 / 10, prom_chunk: 25.0 / 10})
+red_sci = Resource('red_sci', {
+    copper: 1.0, gear: 1.0, 
+}, rocket_capacity = 1000).localIntermediate(gear)
+green_sci = Resource('green_sci', {
+    belt: 1.0, inserter: 1.0, 
+}, rocket_capacity = 1000).localDirectSupply(inserter)
+gray_sci = Resource('gray_sci', {
+    pierce_mag: 0.5, wall: 1.0, grenade: 0.5, 
+}, rocket_capacity = 1000).localDirectSupply(wall)
+blue_sci = Resource('blue_sci', {
+    sulfur: 0.5, red_circuit: 1.5, engine: 1.0, 
+}, rocket_capacity = 1000)
+purple_sci = Resource('purple_sci', {
+    rail: 10.0, elec_furnance: 1/3.0, prod_mod: 1/3.0, 
+}, rocket_capacity = 1000).localDirectSupply(rail)
+golden_sci = Resource('golden_sci', {
+    blue_circuit: 2/3.0, fly_robo: 1/3.0, low_dens: 1.0, 
+}, rocket_capacity = 1000)
+white_sci = Resource('white_sci', {
+    # not inter-planetery
+}, rocket_capacity = 1000)
+em_sci = Resource('em_sci', {
+    # supercapacitor: 1.0, accumulator: 1.0, electrolyte: 25.0 / 50, holmium_solution: 25.0 / 50, 
+    # not inter-planetery
+}, rocket_capacity = 1000)
+agri_sci = Resource('agri_sci', {
+    # not inter-planetery
+}, rocket_capacity = 1000)
+metal_sci = Resource('metal_sci', {
+    # not inter-planetery
+}, rocket_capacity = 1000)
+cryo_sci = Resource('cryo_sci', {
+    # lithium_plate: 1.0, fluoroketone: 3.0 / 50, 
+    # not inter-planetery
+}, rocket_capacity = 1000)
+prom_sci = Resource('prom_sci', {
+    biter_eggs: 10.0 / 10, quantum_cpu: 1.0 / 10, prom_chunk: 25.0 / 10, 
+}, rocket_capacity = 1000)

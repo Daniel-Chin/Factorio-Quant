@@ -1,0 +1,452 @@
+cable	 467.4
+iron	 440.7
+copper	 332.2
+green_circuit	 124.9
+plastic	  67.4
+stone	  55.5
+coal	  43.7
+steel	  43.3
+rail	  30.0
+gear	  25.6
+red_circuit	  22.9
+stone_brick	  20.2
+petro	  16.4
+stick	  16.0
+pipe	  12.1
+sulfur	   9.6
+water	   5.9
+engine	   5.5
+belt	   5.4
+inserter	   4.1
+low_dens	   4.0
+battery	   3.1
+blue_circuit	   2.7
+wall	   2.0
+fly_robo	   1.5
+motor	   1.5
+sulf_acid	   1.5
+pierce_mag	   1.0
+mag	   1.0
+grenade	   1.0
+elec_furnance	   1.0
+prod_mod	   1.0
+lube	   0.5
+crude_oil	   0.5
+red_belt	   0.1
+ug_belt	   0.1
+combinator	   0.1
+splitter	   0.0
+assem_1	   0.0
+red_ug_belt	   0.0
+red_splitter	   0.0
+steel_chest	   0.0
+
+
+Breakdown
+
+
+red_sci 4.0
+red_sci	   4.0
+copper	   4.0
+gear	   4.0
+iron	   8.0
+
+green_sci 4.0
+green_sci	   4.0
+belt	   4.0
+iron	  28.0
+gear	   8.0
+inserter	   4.0
+green_circuit	   4.0
+cable	  12.0
+copper	   6.0
+
+gray_sci 2.0
+gray_sci	   2.0
+pierce_mag	   1.0
+mag	   1.0
+iron	  14.0
+copper	   5.0
+steel	   1.0
+wall	   2.0
+stone_brick	  10.0
+stone	  20.0
+grenade	   1.0
+coal	  10.0
+
+blue_sci 4.0
+blue_sci	   4.0
+sulfur	   2.0
+water	   0.6
+petro	   3.0
+red_circuit	   6.0
+green_circuit	  12.0
+iron	  48.0
+cable	  60.0
+copper	  30.0
+plastic	  12.0
+coal	   6.0
+engine	   4.0
+gear	   4.0
+pipe	   8.0
+steel	   4.0
+
+purple_sci 3.0
+purple_sci	   3.0
+rail	  30.0
+stone	  35.0
+steel	  25.0
+iron	 157.5
+stick	  15.0
+elec_furnance	   1.0
+red_circuit	  10.0
+green_circuit	  25.0
+cable	 115.0
+copper	  57.5
+plastic	  20.0
+coal	  10.0
+petro	   4.0
+stone_brick	  10.0
+prod_mod	   1.0
+
+golden_sci 4.0
+golden_sci	   4.0
+blue_circuit	   2.7
+red_circuit	   5.3
+green_circuit	  70.7
+iron	 133.3
+cable	 233.3
+copper	 199.3
+plastic	  30.7
+coal	  15.3
+petro	   8.1
+sulf_acid	   1.3
+sulfur	   6.7
+water	   4.7
+fly_robo	   1.3
+steel	  10.7
+battery	   2.7
+motor	   1.3
+engine	   1.3
+gear	   1.3
+pipe	   2.7
+lube	   0.4
+crude_oil	   0.4
+low_dens	   4.0
+
+metal_sci 4.0
+metal_sci	   4.0
+
+blue_circuit 0.31
+blue_circuit	   0.3
+red_circuit	   0.6
+green_circuit	   7.4
+iron	   7.5
+cable	  24.8
+copper	  12.4
+plastic	   1.2
+coal	   0.6
+petro	   0.3
+sulf_acid	   0.0
+sulfur	   0.2
+water	   0.1
+
+low_dens 0.31
+low_dens	   0.3
+copper	   6.2
+steel	   0.6
+iron	   3.1
+plastic	   1.6
+coal	   0.8
+petro	   0.3
+
+belt 1.0
+belt	   1.0
+iron	   3.0
+gear	   1.0
+
+red_belt 0.3
+red_belt	   0.3
+belt	   0.3
+iron	   3.9
+gear	   1.8
+
+blue_belt 0.1
+blue_belt	   0.1
+red_belt	   0.1
+belt	   0.1
+iron	   3.3
+gear	   1.6
+
+ug_belt 0.1
+ug_belt	   0.1
+iron	   1.2
+belt	   0.2
+gear	   0.2
+
+red_ug_belt 0.05
+red_ug_belt	   0.1
+ug_belt	   0.1
+iron	   2.6
+belt	   0.1
+gear	   1.1
+
+blue_ug_belt 0.01
+blue_ug_belt	   0.0
+red_ug_belt	   0.0
+ug_belt	   0.0
+iron	   1.3
+belt	   0.0
+gear	   0.6
+
+splitter 0.1
+splitter	   0.1
+iron	   2.2
+belt	   0.4
+gear	   0.4
+green_circuit	   0.5
+cable	   1.5
+copper	   0.8
+
+red_splitter 0.03
+red_splitter	   0.0
+splitter	   0.0
+iron	   1.6
+belt	   0.1
+gear	   0.4
+green_circuit	   0.4
+cable	   1.3
+copper	   0.7
+
+blue_splitter 0.01
+blue_splitter	   0.0
+red_splitter	   0.0
+splitter	   0.0
+iron	   0.9
+belt	   0.0
+gear	   0.2
+green_circuit	   0.4
+cable	   1.4
+copper	   0.7
+red_circuit	   0.1
+plastic	   0.2
+coal	   0.1
+petro	   0.0
+
+iron_chest 0.1
+iron_chest	   0.1
+iron	   0.8
+
+inserter 0.1
+inserter	   0.1
+iron	   0.4
+gear	   0.1
+green_circuit	   0.1
+cable	   0.3
+copper	   0.2
+
+blue_inserter 0.1
+blue_inserter	   0.1
+inserter	   0.1
+iron	   0.8
+gear	   0.1
+green_circuit	   0.3
+cable	   0.9
+copper	   0.5
+
+elec_pole 0.1
+elec_pole	   0.1
+steel	   0.2
+iron	   1.2
+stick	   0.4
+cable	   0.2
+copper	   0.1
+
+big_pole 0.05
+big_pole	   0.1
+steel	   0.2
+iron	   1.5
+stick	   0.4
+cable	   0.2
+copper	   0.1
+
+substation 0.02
+substation	   0.0
+steel	   0.2
+iron	   1.2
+cable	   1.1
+copper	   0.6
+red_circuit	   0.1
+green_circuit	   0.2
+plastic	   0.2
+coal	   0.1
+petro	   0.0
+
+pipe_to_ground 0.1
+pipe_to_ground	   0.1
+pipe	   1.0
+iron	   1.5
+
+rail 0.3
+rail	   0.3
+stone	   0.1
+steel	   0.1
+iron	   0.8
+stick	   0.1
+
+signal 0.1
+signal	   0.1
+iron	   0.6
+green_circuit	   0.1
+cable	   0.3
+copper	   0.2
+
+logi_robot 0.1
+logi_robot	   0.1
+fly_robo	   0.1
+steel	   0.2
+iron	   2.6
+battery	   0.2
+copper	   2.0
+sulf_acid	   0.1
+sulfur	   0.4
+water	   0.3
+petro	   0.2
+green_circuit	   0.9
+cable	   3.5
+motor	   0.1
+engine	   0.1
+gear	   0.1
+pipe	   0.2
+lube	   0.0
+crude_oil	   0.0
+red_circuit	   0.2
+plastic	   0.4
+coal	   0.2
+
+cons_robot 0.1
+cons_robot	   0.1
+fly_robo	   0.1
+steel	   0.2
+iron	   2.4
+battery	   0.2
+copper	   1.2
+sulf_acid	   0.1
+sulfur	   0.4
+water	   0.3
+petro	   0.1
+green_circuit	   0.7
+cable	   2.1
+motor	   0.1
+engine	   0.1
+gear	   0.1
+pipe	   0.2
+lube	   0.0
+crude_oil	   0.0
+
+storage_chest 0.01
+storage_chest	   0.0
+steel_chest	   0.0
+steel	   0.1
+iron	   0.5
+green_circuit	   0.1
+cable	   0.2
+copper	   0.1
+red_circuit	   0.0
+plastic	   0.0
+coal	   0.0
+petro	   0.0
+
+roboport 0.01
+roboport	   0.0
+steel	   0.5
+iron	   3.6
+green_circuit	   1.4
+cable	   5.9
+copper	   2.9
+red_circuit	   0.5
+plastic	   0.9
+coal	   0.5
+petro	   0.2
+
+combinator 0.03
+combinator	   0.0
+green_circuit	   0.1
+iron	   0.1
+cable	   0.6
+copper	   0.3
+
+selector 0.01
+selector	   0.0
+combinator	   0.1
+green_circuit	   0.3
+iron	   0.3
+cable	   1.2
+copper	   0.6
+red_circuit	   0.0
+plastic	   0.0
+coal	   0.0
+petro	   0.0
+
+heat_pipe 0.0022222222222222222
+heat_pipe	   0.0
+steel	   0.0
+iron	   0.1
+copper	   0.0
+
+heat_exchanger 0.0011111111111111111
+heat_exchanger	   0.0
+steel	   0.0
+iron	   0.1
+pipe	   0.0
+copper	   0.1
+
+turbine 0.0022222222222222222
+turbine	   0.0
+pipe	   0.0
+iron	   0.3
+copper	   0.1
+gear	   0.1
+
+drill 0.01
+drill	   0.0
+gear	   0.1
+iron	   0.2
+green_circuit	   0.0
+cable	   0.1
+copper	   0.0
+
+elec_furnance 0.02
+elec_furnance	   0.0
+steel	   0.2
+iron	   1.2
+red_circuit	   0.1
+green_circuit	   0.2
+cable	   1.0
+copper	   0.5
+plastic	   0.2
+coal	   0.1
+petro	   0.0
+stone_brick	   0.2
+stone	   0.4
+
+assem_2 0.02
+assem_2	   0.0
+assem_1	   0.0
+iron	   0.9
+gear	   0.2
+green_circuit	   0.1
+cable	   0.4
+copper	   0.2
+steel	   0.0
+
+chemical_plant 0.005
+chemical_plant	   0.0
+steel	   0.0
+iron	   0.2
+green_circuit	   0.0
+cable	   0.1
+copper	   0.0
+pipe	   0.0
+gear	   0.0
+

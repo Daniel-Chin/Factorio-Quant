@@ -72,7 +72,7 @@ def forward(
   - holmium plate: {ship(holmium_plate, local_rocket_mats=(rocket_fuel, blue_circuit, low_dens))}
   - superconductor: {ship(superconductor, local_rocket_mats=(rocket_fuel, blue_circuit, low_dens))}
   - sci: {ship(em_sci, local_rocket_mats=(rocket_fuel, blue_circuit, low_dens))}
-  - eventually, plastic + coal + sulfur
+  - eventually, plastic + grenade + sulfur
 - orbit drops carbon, ice, iron_ore, calcite
 
 ## nauvis
@@ -80,16 +80,10 @@ def forward(
 - im
   - all sci
   - bioflux
-  - blue_circuit
-  - tungsten carbide
-  - superconductor
-  - fibre
-  - lithium plate
-  - fluoroketone
 - ex
   - supply fission fuel, for now
-  - eventually, none.
-- harvestor drops prom chunks; orbit drops white sci
+  - eventually, eggs
+- orbit drops white sci
 
 ## gleba
 - im
@@ -117,8 +111,8 @@ def forward(
 - im
   - heavy oil barrels (for lube)
   - rocket fuel
-  - eventually, plastic + coal + sulfur
-- drop ice, carbon
+  - eventually, plastic + grenade + sulfur
+- orbit drops carbon
 
 ## aquilo
 - im
@@ -140,7 +134,7 @@ def forward(
   - fluoroketon barrels: {ship(fluoroketone)}
   - lithium plate: {ship(lithium_plate)}
   - fusion cells: trace amount
-  - maybe plastic + coal + sulfur!!! If this is the case, scratch fulgora
+  - maybe plastic + grenade + sulfur!!! If this is the case, scratch fulgora
 
 ## stats
 - {acc_rocket * RTT} rocket / {RTT} sec

@@ -1,0 +1,92 @@
+# star system
+- Per second DEMAND = {red_sci: 4.0, green_sci: 4.0, gray_sci: 2.0, blue_sci: 4.0, purple_sci: 3.0, golden_sci: 4.0, white_sci: 4.0, em_sci: 4.0, agri_sci: 1.0, metal_sci: 4.0, cryo_sci: 4.0, prom_sci: 4.0}
+
+## fulgora
+- im
+  - none
+- ex
+  - rocket_fuel: 0.74 / s, 3.7 rockets / trip
+  - heavy oil barrels: 0.40 / s, 2.0 rockets / trip
+  - holmium plate: 0.38 / s, 0.2 rockets / trip
+  - superconductor: 0.40 / s, 0.2 rockets / trip
+  - sci: 4.00 / s, 2.0 rockets / trip
+  - eventually, plastic + grenade + sulfur
+- orbit drops carbon, ice, iron_ore, calcite
+
+## nauvis
+- use biolabs
+- im
+  - all sci
+  - bioflux
+- ex
+  - supply fission fuel, for now
+  - eventually, eggs
+- orbit drops white sci
+
+## gleba
+- im
+  - rocket parts
+- ex
+  - sci: one rocket per trip
+  - bioflux: one rocket per trip
+  - fibre: 0.40 / s, 0.4 rockets / trip
+  - stack inserter: future
+- orbit drops carbon, but in the future
+
+## vulcanus
+- ex
+  - red_sci: 4.00 / s, 2.0 rockets / trip
+  - green_sci: 4.00 / s, 2.0 rockets / trip
+  - gray_sci: 2.00 / s, 1.0 rockets / trip
+  - blue_sci: 4.00 / s, 2.0 rockets / trip
+  - purple_sci: 3.00 / s, 1.5 rockets / trip
+  - golden_sci: 4.00 / s, 2.0 rockets / trip
+  - metal_sci: 4.00 / s, 2.0 rockets / trip
+  - blue circuits: 0.71 / s, 1.2 rockets / trip
+  - low_dens: 0.31 / s, 0.8 rockets / trip
+  - tungsten carbide: 0.40 / s, 0.4 rockets / trip
+  - tungsten plate: on-demand
+- im
+  - heavy oil barrels (for lube)
+  - rocket fuel
+  - eventually, plastic + grenade + sulfur
+- orbit drops carbon
+
+## aquilo
+- im
+  - rocket parts
+  - holmium plate
+  - 
+  - concrete
+  - iron
+  - copper
+  - steel
+  - engine
+  - plastic
+  - heat pipes
+  - 
+  - silo
+  - landing pad
+- ex
+  - sci: 4.00 / s, 2.0 rockets / trip
+  - fluoroketon barrels: 0.08 / s, 0.4 rockets / trip
+  - lithium plate: 0.80 / s, 0.8 rockets / trip
+  - fusion cells: trace amount
+  - maybe plastic + grenade + sulfur!!! If this is the case, scratch fulgora
+
+## stats
+- 26.541114186851214 rocket / 500 sec
+
+## Issues
+- inf plastic?
+  - eventaully, aquilo route water + fulgora oil + space carbon
+  - now, spend a lot of sulf acids
+  - what if aquilo = inf plastic?
+- scale gleba sci?
+  - just don't do it
+    - or duplicate the base. but that's 0 fun isn't it
+
+## todo
+- fulgora
+  - use logistics to solve the production    
+

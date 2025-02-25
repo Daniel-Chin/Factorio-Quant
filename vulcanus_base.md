@@ -14,12 +14,15 @@
   - rocket fuel (belt)
 
 - make tungsten-ore-related facilities close together
+  - ore: 40/s
+  - carbide (9.68/s for metal sci + 1/s for others)
+  - plate (4.6/s)
   - BMD
   - foundry
   - speed 3
   - metal sci
 - near landing pad
-  - carbon 2 carbide    (13.0/s)
+  - carbon 2 carbide    (11.0/s)
   - carbon refuel       (2.0/s)
   - evantually:
     - mil sci

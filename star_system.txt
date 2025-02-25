@@ -1,16 +1,16 @@
 # star system
-- Per second DEMAND = {red_sci: 4.0, green_sci: 4.0, gray_sci: 2.0, blue_sci: 4.0, purple_sci: 3.0, golden_sci: 4.0, white_sci: 4.0, em_sci: 4.0, agri_sci: 1.0, metal_sci: 4.0, cryo_sci: 4.0, prom_sci: 4.0}
+- Per second DEMAND = {red_sci: 4.0, green_sci: 4.0, gray_sci: 4.0, blue_sci: 4.0, purple_sci: 4.0, golden_sci: 4.0, white_sci: 4.0, em_sci: 4.0, agri_sci: 1.0, metal_sci: 4.0, cryo_sci: 4.0, prom_sci: 4.0}
 
 ## fulgora
 - im
   - none
 - ex
-  - rocket_fuel: 0.74 / s, 3.7 rockets / trip
+  - rocket_fuel: 0.79 / s, 3.9 rockets / trip
   - heavy oil barrels: 0.40 / s, 2.0 rockets / trip
   - holmium plate: 0.38 / s, 0.2 rockets / trip
   - superconductor: 0.40 / s, 0.2 rockets / trip
   - sci: 4.00 / s, 2.0 rockets / trip
-  - eventually, plastic + grenade + sulfur
+  - eventually, plastic + grenade
 - orbit drops carbon, ice, iron_ore, calcite
 
 ## nauvis
@@ -37,20 +37,21 @@
 - ex
   - red_sci: 4.00 / s, 2.0 rockets / trip
   - green_sci: 4.00 / s, 2.0 rockets / trip
-  - gray_sci: 2.00 / s, 1.0 rockets / trip
+  - gray_sci: 4.00 / s, 2.0 rockets / trip
   - blue_sci: 4.00 / s, 2.0 rockets / trip
-  - purple_sci: 3.00 / s, 1.5 rockets / trip
+  - purple_sci: 4.00 / s, 2.0 rockets / trip
   - golden_sci: 4.00 / s, 2.0 rockets / trip
   - metal_sci: 4.00 / s, 2.0 rockets / trip
   - blue circuits: 0.71 / s, 1.2 rockets / trip
   - low_dens: 0.31 / s, 0.8 rockets / trip
   - tungsten carbide: 0.40 / s, 0.4 rockets / trip
   - tungsten plate: on-demand
+  - repair packs: on-demand
 - im
   - heavy oil barrels (for lube)
   - rocket fuel
-  - eventually, plastic + grenade + sulfur
-- orbit drops carbon
+  - eventually, plastic + grenade
+- orbit drops sulfur (4 droppers), carbon
 
 ## aquilo
 - im
@@ -72,10 +73,10 @@
   - fluoroketon barrels: 0.08 / s, 0.4 rockets / trip
   - lithium plate: 0.80 / s, 0.8 rockets / trip
   - fusion cells: trace amount
-  - maybe plastic + grenade + sulfur!!! If this is the case, scratch fulgora
+  - maybe plastic + grenade!!! If this is the case, scratch fulgora
 
 ## stats
-- 26.541114186851214 rocket / 500 sec
+- 28.261702422145333 rocket / 500 sec
 
 ## Issues
 - inf plastic?

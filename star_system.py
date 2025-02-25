@@ -4,9 +4,9 @@ RTT = 500 # hauler round trip time in sec
 DEMAND = {
   red_sci   : 4.0, 
   green_sci : 4.0, 
-  gray_sci  : 2.0, 
+  gray_sci  : 4.0, 
   blue_sci  : 4.0, 
-  purple_sci: 3.0, 
+  purple_sci: 4.0, 
   golden_sci: 4.0, 
   white_sci : 4.0,
   em_sci    : 4.0,
@@ -72,7 +72,7 @@ def forward(
   - holmium plate: {ship(holmium_plate, local_rocket_mats=(rocket_fuel, blue_circuit, low_dens))}
   - superconductor: {ship(superconductor, local_rocket_mats=(rocket_fuel, blue_circuit, low_dens))}
   - sci: {ship(em_sci, local_rocket_mats=(rocket_fuel, blue_circuit, low_dens))}
-  - eventually, plastic + grenade + sulfur
+  - eventually, plastic + grenade
 - orbit drops carbon, ice, iron_ore, calcite
 
 ## nauvis
@@ -108,11 +108,12 @@ def forward(
   - low_dens: {ship(low_dens, local_rocket_mats=(blue_circuit, low_dens))}
   - tungsten carbide: {ship(tungsten_carbide, local_rocket_mats=(blue_circuit, low_dens))}
   - tungsten plate: on-demand
+  - repair packs: on-demand
 - im
   - heavy oil barrels (for lube)
   - rocket fuel
-  - eventually, plastic + grenade + sulfur
-- orbit drops carbon
+  - eventually, plastic + grenade
+- orbit drops sulfur (4 droppers), carbon
 
 ## aquilo
 - im
@@ -134,7 +135,7 @@ def forward(
   - fluoroketon barrels: {ship(fluoroketone)}
   - lithium plate: {ship(lithium_plate)}
   - fusion cells: trace amount
-  - maybe plastic + grenade + sulfur!!! If this is the case, scratch fulgora
+  - maybe plastic + grenade!!! If this is the case, scratch fulgora
 
 ## stats
 - {acc_rocket * RTT} rocket / {RTT} sec
@@ -165,10 +166,10 @@ def main():
     markdown, actual = forward(guess)
     print(*[format(x, '.2f') for x in actual.values()])
     loss = sum([
-      (guess[resource] - actual[resource]) ** 2 
+      abs(guess[resource] - actual[resource])
       for resource in guess.keys()
     ])
-    if loss < 1e-6:
+    if loss < 1e-8:
       break
     guess = actual
   input('Found solution. Enter...')

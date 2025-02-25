@@ -7,9 +7,9 @@ def main():
     d = {
         red_sci   : 4.0, 
         green_sci : 4.0, 
-        gray_sci  : 2.0, 
+        gray_sci  : 4.0, 
         blue_sci  : 4.0, 
-        purple_sci: 3.0, 
+        purple_sci: 4.0, 
         golden_sci: 4.0, 
         metal_sci : 4.0,
 

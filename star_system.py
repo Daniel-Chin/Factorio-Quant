@@ -10,7 +10,7 @@ DEMAND = {
   golden_sci: 4.0, 
   white_sci : 4.0,
   em_sci    : 4.0,
-  agri_sci  : 1.0,
+  agri_sci  : 4.0,
   metal_sci : 4.0,
   cryo_sci  : 4.0, 
   prom_sci  : 4.0, 
@@ -82,17 +82,16 @@ def forward(
   - bioflux
 - ex
   - supply fission fuel, for now
-  - eventually, eggs
 - orbit drops white sci
 
 ## gleba
 - im
   - rocket parts
 - ex
-  - sci: {consumeOneRocketPerTrip()}
+  - sci: {ship(agri_sci, local_rocket_mats=(rocket_fuel, ))}
   - bioflux: {consumeOneRocketPerTrip()}
-  - fibre: {ship(fibre)}
-  - stack inserter: future
+  - fibre: {ship(fibre)} (to prom ship)
+  - stack inserter: on-demand
 - orbit drops carbon, but in the future
 
 ## vulcanus
@@ -106,30 +105,26 @@ def forward(
   - metal_sci: {ship(metal_sci, local_rocket_mats=(blue_circuit, low_dens))}
   - blue circuits: {ship(blue_circuit, local_rocket_mats=(blue_circuit, low_dens))}
   - low_dens: {ship(low_dens, local_rocket_mats=(blue_circuit, low_dens))}
-  - tungsten carbide: {ship(tungsten_carbide, local_rocket_mats=(blue_circuit, low_dens))}
+  - tungsten carbide: {ship(tungsten_carbide, local_rocket_mats=(blue_circuit, low_dens))} (to prom ship)
   - tungsten plate: on-demand
   - repair packs: on-demand
 - im
   - heavy oil barrels (for lube)
   - rocket fuel
-  - eventually, plastic + grenade
+  - eventually, plastic (57/s) + grenade (16.7/s)
+    - plastic 57/s
+    - assume sulfur from space
+    - petro 57 * 20 / 1.234 = 923.82 liquid / s
+    - light/water = 923.82 / 2 * 3 / 1.234 = 1122.96 liquid /s
+    - water = 1122.96 + 1122.96 / 1.234 = 2032.98 liquid / s
+    - ice = 2032.98 / 20 / 1.234 = 82.37 / s
+    - plastic water requirement (sulfur form space) is 57*30 = 1710/s
 - orbit drops sulfur (4 droppers), carbon
 
 ## aquilo
 - im
-  - rocket parts
+  - blue circuit, LDS (for rocket)
   - holmium plate
-  - 
-  - concrete
-  - iron
-  - copper
-  - steel
-  - engine
-  - plastic
-  - heat pipes
-  - 
-  - silo
-  - landing pad
 - ex
   - sci: {ship(cryo_sci)}
   - fluoroketon barrels: {ship(fluoroketone)}
@@ -145,9 +140,6 @@ def forward(
   - eventaully, aquilo route water + fulgora oil + space carbon
   - now, spend a lot of sulf acids
   - what if aquilo = inf plastic?
-- scale gleba sci?
-  - just don't do it
-    - or duplicate the base. but that's 0 fun isn't it
 
 ## todo
 - fulgora

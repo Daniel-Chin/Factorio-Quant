@@ -1,4 +1,7 @@
 # Vulcanus base
+## todo
+
+## design
 - pre bus
   - lube
 - main bus

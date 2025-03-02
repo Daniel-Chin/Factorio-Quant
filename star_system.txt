@@ -1,11 +1,11 @@
 # star system
-- Per second DEMAND = {red_sci: 4.0, green_sci: 4.0, gray_sci: 4.0, blue_sci: 4.0, purple_sci: 4.0, golden_sci: 4.0, white_sci: 4.0, em_sci: 4.0, agri_sci: 1.0, metal_sci: 4.0, cryo_sci: 4.0, prom_sci: 4.0}
+- Per second DEMAND = {red_sci: 4.0, green_sci: 4.0, gray_sci: 4.0, blue_sci: 4.0, purple_sci: 4.0, golden_sci: 4.0, white_sci: 4.0, em_sci: 4.0, agri_sci: 4.0, metal_sci: 4.0, cryo_sci: 4.0, prom_sci: 4.0}
 
 ## fulgora
 - im
   - none
 - ex
-  - rocket_fuel: 0.79 / s, 3.9 rockets / trip
+  - rocket_fuel: 0.68 / s, 3.4 rockets / trip
   - heavy oil barrels: 0.40 / s, 2.0 rockets / trip
   - holmium plate: 0.38 / s, 0.2 rockets / trip
   - superconductor: 0.40 / s, 0.2 rockets / trip
@@ -20,17 +20,16 @@
   - bioflux
 - ex
   - supply fission fuel, for now
-  - eventually, eggs
 - orbit drops white sci
 
 ## gleba
 - im
   - rocket parts
 - ex
-  - sci: one rocket per trip
+  - sci: 4.00 / s, 2.0 rockets / trip
   - bioflux: one rocket per trip
-  - fibre: 0.40 / s, 0.4 rockets / trip
-  - stack inserter: future
+  - fibre: 0.40 / s, 0.4 rockets / trip (to prom ship)
+  - stack inserter: on-demand
 - orbit drops carbon, but in the future
 
 ## vulcanus
@@ -42,32 +41,28 @@
   - purple_sci: 4.00 / s, 2.0 rockets / trip
   - golden_sci: 4.00 / s, 2.0 rockets / trip
   - metal_sci: 4.00 / s, 2.0 rockets / trip
-  - blue circuits: 0.71 / s, 1.2 rockets / trip
-  - low_dens: 0.31 / s, 0.8 rockets / trip
-  - tungsten carbide: 0.40 / s, 0.4 rockets / trip
+  - blue circuits: 0.66 / s, 1.1 rockets / trip
+  - low_dens: 0.26 / s, 0.7 rockets / trip
+  - tungsten carbide: 0.40 / s, 0.4 rockets / trip (to prom ship)
   - tungsten plate: on-demand
   - repair packs: on-demand
 - im
   - heavy oil barrels (for lube)
   - rocket fuel
-  - eventually, plastic + grenade
+  - eventually, plastic (57/s) + grenade (16.7/s)
+    - plastic 57/s
+    - assume sulfur from space
+    - petro 57 * 20 / 1.234 = 923.82 liquid / s
+    - light/water = 923.82 / 2 * 3 / 1.234 = 1122.96 liquid /s
+    - water = 1122.96 + 1122.96 / 1.234 = 2032.98 liquid / s
+    - ice = 2032.98 / 20 / 1.234 = 82.37 / s
+    - plastic water requirement (sulfur form space) is 57*30 = 1710/s
 - orbit drops sulfur (4 droppers), carbon
 
 ## aquilo
 - im
-  - rocket parts
+  - blue circuit, LDS (for rocket)
   - holmium plate
-  - 
-  - concrete
-  - iron
-  - copper
-  - steel
-  - engine
-  - plastic
-  - heat pipes
-  - 
-  - silo
-  - landing pad
 - ex
   - sci: 4.00 / s, 2.0 rockets / trip
   - fluoroketon barrels: 0.08 / s, 0.4 rockets / trip
@@ -76,16 +71,13 @@
   - maybe plastic + grenade!!! If this is the case, scratch fulgora
 
 ## stats
-- 28.261702422145333 rocket / 500 sec
+- 29.56490311418686 rocket / 500 sec
 
 ## Issues
 - inf plastic?
   - eventaully, aquilo route water + fulgora oil + space carbon
   - now, spend a lot of sulf acids
   - what if aquilo = inf plastic?
-- scale gleba sci?
-  - just don't do it
-    - or duplicate the base. but that's 0 fun isn't it
 
 ## todo
 - fulgora

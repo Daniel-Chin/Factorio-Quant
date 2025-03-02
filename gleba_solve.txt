@@ -1,0 +1,32 @@
+fiber 0.40
+n_chambers = 1.026272577996716
+carbon 0.32840722495894914
+
+sci 4.00
+n_chambers = 7.490636704119851
+
+egg 2.25
+n_chambers = 15.780835753061483
+
+rocket fuel 0.31
+n_chambers = 1.4470548178413347
+
+nutrient 69.52
+n_chambers = 1.6272572334811244
+
+bioflux 7.48
+n_chambers = 4.03859975581312
+
+jelly 17.81
+n_chambers = 2.0844836823929938
+
+y_mash 19.03
+n_chambers = 4.455667438497346
+
+brain 2.50
+trees 15.008282513229556
+
+yumako 5.35
+trees 32.08080555718089
+
+Total chambers ~= 37.226380261088636
